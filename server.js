@@ -20,8 +20,8 @@ app.use(express.json());
 // URI FOR MongoDB
 const uri = process.env.ATLAS_URI;
 // Connecting to mongoose, uri
-mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology:true });
-// Creating a connection variable.
+mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
+// Creating a connection instance variable.
 const connection = mongoose.connection;
 // Once the connection is "open" => log -||-
 connection.once('open', () => {
@@ -34,8 +34,8 @@ connection.once('open', () => {
 // Routes for the server to use;
 // The server URL is https://localhost:5000. 
 // Now if you add “/exercises” or “/users” on the end it will load the endpoints defined in the corresponding router files.
-const exercisesRouter = require("./routes/exercises");
-const usersRouter = require("./routes/users");
+const exercisesRouter = require("./routes/exercises.route");
+const usersRouter = require("./routes/users.route");
 app.use("/exercises", exercisesRouter);
 app.use("/users", usersRouter);
 
