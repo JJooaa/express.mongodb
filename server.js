@@ -8,8 +8,9 @@ require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 5000;
 
+// Origin is the url from netlify
 let corsOptions = {
-  origin: "http://localhost:3000",
+  origin: "https://musing-euler-bb613a.netlify.app/",
   optionsSuccessStatus: 200
 };
 
