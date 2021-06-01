@@ -10,7 +10,7 @@ const port = process.env.PORT || 5000;
 
 // Origin is the url from netlify
 let corsOptions = {
-  origin: "https://musing-euler-bb613a.netlify.app/",
+  origin: "https://peaceful-poincare-5cb351.netlify.app/",
   optionsSuccessStatus: 200
 };
 
