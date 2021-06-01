@@ -15,7 +15,7 @@ let corsOptions = {
 };
 
 // App .use cors so we can run server on localhost, passing the restrictions. 
-app.use(cors(corsOptions));
+app.use(cors());
 
 // And express.json(), to return info in JSON.
 app.use(express.json());
