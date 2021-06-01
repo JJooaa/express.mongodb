@@ -8,8 +8,13 @@ require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 5000;
 
+let corsOptions = {
+  origin: "http://localhost:3000",
+  optionsSuccessStatus: 200
+};
+
 // App .use cors so we can run server on localhost, passing the restrictions. 
-app.use(cors());
+app.use(cors(corsOptions));
 
 // And express.json(), to return info in JSON.
 app.use(express.json());
@@ -35,9 +40,9 @@ connection.once('open', () => {
 // The server URL is https://localhost:5000. 
 // Now if you add “/exercises” or “/users” on the end it will load the endpoints defined in the corresponding router files.
 const exercisesRouter = require("./routes/exercises.route");
-const usersRouter = require("./routes/users.route");
+// const usersRouter = require("./routes/users.route");
 app.use("/exercises", exercisesRouter);
-app.use("/users", usersRouter);
+// app.use("/users", usersRouter);
 
 
 // Makes the local server run.
