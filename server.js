@@ -22,12 +22,6 @@ app.set("trust proxy", 1);
 // Use the limiter
 app.use(limiter);
 
-// Origin is the url from netlify
-let corsOptions = {
-  origin: "https://peaceful-poincare-5cb351.netlify.app/",
-  optionsSuccessStatus: 200
-};
-
 // App .use cors so we can run server on localhost, passing the restrictions. 
 app.use(cors());
 
