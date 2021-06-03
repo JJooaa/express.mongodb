@@ -9,13 +9,17 @@ const rateLimit = require("express-rate-limit");
 const app = express();
 const port = process.env.PORT || 5000;
 
+// Declare how many requests can be done in an hour.
 const limiter = rateLimit({
   windowMS: 15 * 60 * 1000,
-  max: 30
+  max: 20,
+  message: "Too many requests to handle at this hour!" 
 });
 
+// Trust proxy for heroku.
 app.set("trust proxy", 1);
 
+// Use the limiter
 app.use(limiter);
 
 // Origin is the url from netlify
