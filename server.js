@@ -3,10 +3,20 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 require("dotenv").config();
+const rateLimit = require("express-rate-limit");
 
 // Create app, port variables. 
 const app = express();
 const port = process.env.PORT || 5000;
+
+const limiter = rateLimit({
+  windowMS: 15 * 60 * 1000,
+  max: 30
+});
+
+app.set("trust proxy", 1);
+
+app.use(limiter);
 
 // Origin is the url from netlify
 let corsOptions = {
@@ -42,7 +52,7 @@ connection.once('open', () => {
 // Now if you add “/exercises” or “/users” on the end it will load the endpoints defined in the corresponding router files.
 const exercisesRouter = require("./routes/exercises.route");
 // const usersRouter = require("./routes/users.route");
-app.use("/exercises", exercisesRouter);
+app.use("/exercises", limiter, exercisesRouter);
 // app.use("/users", usersRouter);
 
 
