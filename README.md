@@ -1,11 +1,13 @@
-Express.mongodb backend.
+# Express.mongodb backend.
+This is a Backend for my Full-Stack-Interactive-Exercise-Tracker
 
-Install:
-- cd to project directory
-- npm install 
-- (optional) npm install -g nodemon 
+## LINK TO FRONT END REPO
+You can find the repo here: https://github.com/JJooaa/Full-Stack-Interactive-Exercise-Tracker
 
-// nodemon is for automatic server updates. 
+## USAGE 
+Its usage is intended for personal use. Dont DDOS my shit.
 
-- running "node server" starts the server.
+## Tech
+Used node.js, express.js, mongodb, heroku.
+
 
