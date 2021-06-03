@@ -32,7 +32,7 @@ app.use(express.json());
 
 
 // URI FOR MongoDB
-const uri = process.env.ATLAS_URI;
+const uri = process.env.MONGODB_URI;
 // Connecting to mongoose, uri
 mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
 // Creating a connection instance variable.
